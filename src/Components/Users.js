@@ -36,7 +36,7 @@ export default class Users extends Component {
         return (
             <div className='container my-3'>
                 <div className="text-center">
-                <h3>Welcome! This website fetches data from an API</h3>
+                <h3>Welcome! This application fetches data from an API</h3>
                 <button className="btn btn-outline-dark my-2" type="submit" onClick={this.loadUsers} >{!(this.state.display) ? "Get User Data" : "Refresh" }</button>
                 </div>
                 {this.state.loading && <Loader />}
