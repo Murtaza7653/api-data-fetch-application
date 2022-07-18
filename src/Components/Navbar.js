@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './images/logo.jpg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default class Navbar extends Component {
-    render() {
+export default function Navbar (){
+
+    const navigate = useNavigate();
+
         return (
-            <nav className="navbar navbar-dark navbar-expand-lg " style={{ backgroundColor: "#333741" }}>
+            <nav className="navbar navbar-dark navbar-expand-lg " style={{ backgroundColor: "#283618" }}>
                 <div className="container-fluid">
                     <img className=' mx-2' src={logo} alt="logo" />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,16 +16,18 @@ export default class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{ fontSize: "20px" }}>
                             <li className="nav-item mx-2 my-3">
-                                <Link className="nav-link active" aria-current="page" to="/">Fetch Users</Link>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
-                            <td className='my-4' style={{ borderLeft: "2px solid white", padding: "2px" }}></td>
                             <li className="nav-item mx-2 my-3">
                                 <Link className="nav-link active" to="/about">About Us</Link>
                             </li>
                         </ul>
+                        <form className="d-flex" role="search">
+                            <button className="btn btn-lg btn-outline-light mx-5" type="button" onClick={()=>{navigate('/users')}}>Get Users</button>
+                        </form>
                     </div>
                 </div>
             </nav>
         )
-    }
+
 }
