@@ -32,7 +32,6 @@ export default function Users() {
 
         <div className='container my-3'>
             <div className="text-center">
-                {/* <h3>Welcome! This application fetches data from an API</h3> */}
             </div>
             {loading && <Loader />}
             <div className="row">
